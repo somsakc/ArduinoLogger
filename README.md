@@ -7,7 +7,7 @@ The library comes an example sketches. See file > examples > loggerdemo.inu as d
 # API Guideline
 ## Logging Level
 
- LOG_LEVEL_NONE      0\n
+ LOG_LEVEL_NONE      0<br>
  LOG_LEVEL_CRITICAL  1
  LOG_LEVEL_ERROR     2
  LOG_LEVEL_WARN      3
