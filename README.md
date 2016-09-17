@@ -3,14 +3,14 @@ Arduino leveling logger with vsnprint-format supplied message
 
 # Example
 
-##include "Logging.h"
+ #include "Logging.h"
 
-void setup() {
+ void setup() {
     Log.begin(LOG_LEVEL_DEFAULT, 115200L);
     delay(1000);
-}
+ }
 
-void loop() {
+ void loop() {
     int mInt1 = 232;
     int mInt2 = -32199;
     uint8_t mUInt8_1 = 232;
@@ -63,4 +63,4 @@ void loop() {
     Log.error("\n");
     
     delay(50000L);
-}
+ }
