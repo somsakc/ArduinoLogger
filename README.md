@@ -2,7 +2,8 @@
 Arduino leveling logger with vsnprint-format supplied message
 
 # Example
-#include "Logging.h"
+
+##include "Logging.h"
 
 void setup() {
     Log.begin(LOG_LEVEL_DEFAULT, 115200L);
