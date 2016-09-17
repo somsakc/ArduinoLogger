@@ -2,7 +2,7 @@
 Arduino leveling logger with vsnprint-format supplied message
 
 # Example
-The library comes an example sketches. See file > examples > loggerdemo.inu as demo Arduino application.
+The library comes an example sketches. See file > examples > loggerdemo.ino as demo Arduino application.
 
 # API Guideline
 ## Logging Level
