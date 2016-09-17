@@ -5,17 +5,17 @@ Arduino leveling logger with vsnprint-format supplied message
 The library comes an example sketches. See file > examples > loggerdemo.inu as demo Arduino application.
 
 # API Guideline
-## Logging Levl
+## Logging Level
 
- #define LOG_LEVEL_NONE      0
- #define LOG_LEVEL_CRITICAL  1
- #define LOG_LEVEL_ERROR     2
- #define LOG_LEVEL_WARN      3
- #define LOG_LEVEL_INFO      4
- #define LOG_LEVEL_DEBUG     5
- #define LOG_LEVEL_VERBOSE   6
+ LOG_LEVEL_NONE      0
+ LOG_LEVEL_CRITICAL  1
+ LOG_LEVEL_ERROR     2
+ LOG_LEVEL_WARN      3
+ LOG_LEVEL_INFO      4
+ LOG_LEVEL_DEBUG     5
+ LOG_LEVEL_VERBOSE   6
 
-## Function usage
+## Function Usage
 
     void begin(const int level = LOG_LEVEL_DEFAULT, const long speed = 115200L);
 
