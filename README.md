@@ -1,66 +1,47 @@
-# ArduinoLogger
+# Arduino Logger
 Arduino leveling logger with vsnprint-format supplied message
 
 # Example
+The library comes an example sketches. See file > examples > loggerdemo.inu as demo Arduino application.
 
- #include "Logging.h"
+# API Guideline
+## Logging Levl
 
- void setup() {
-    Log.begin(LOG_LEVEL_DEFAULT, 115200L);
-    delay(1000);
- }
+ #define LOG_LEVEL_NONE      0
+ #define LOG_LEVEL_CRITICAL  1
+ #define LOG_LEVEL_ERROR     2
+ #define LOG_LEVEL_WARN      3
+ #define LOG_LEVEL_INFO      4
+ #define LOG_LEVEL_DEBUG     5
+ #define LOG_LEVEL_VERBOSE   6
 
- void loop() {
-    int mInt1 = 232;
-    int mInt2 = -32199;
-    uint8_t mUInt8_1 = 232;
-    uint8_t mUInt8_2 = 256;
-    uint16_t mUInt16_1 = 23342;
-    uint16_t mUInt16_2 = 3299;
-    byte mByte1 = 'A';
-    byte mByte2 = ' ';
-    long mLong1 = 99403020L;
-    long mLong2 = -45021L;
-    unsigned long mULong1 = 4123456789L;
-    unsigned long mULong2 = 45021L;
-    bool mBool1 = true;
-    bool mBool2 = false;
-    float myFloat1 = 28434.32343;
+## Function usage
 
-    char* mCharArray = "this is a string";
-    String mString = "this is String object";
+    void begin(const int level = LOG_LEVEL_DEFAULT, const long speed = 115200L);
 
-    Log.info("########### Logging example ###########");
-    
-    Log.info("This is int mInt1 %d, mInt2 %d", mInt1, mInt2);
-    Log.info("This is int mInt1=%x, mInt1=%X, mInt1=%06X", mInt1, mInt1, mInt1);
-    Log.info("This is int mInt2=%x, mInt2=%X", mInt2, mInt2);
-    Log.info("This is uint8_t mUInt8_1=%u, mUInt8_2=%u", mUInt8_1, mUInt8_2);
-    Log.info("This is uint16_t mUInt16_1=%u, mUInt16_2=%u", mUInt16_1, mUInt16_2);
-    Log.info("This is long mLong1 %ld, mLong2=%ld", mLong1, mLong2);
-    Log.info("This is long mULong1 %lu, mULong2=%lu", mULong1, mULong2);
-    Log.warn("This is byte mByte1=%d, mByte2=%d", mByte1, mByte2);
-    Log.info("This is bool mBool1=%d, mBool2=%d", mBool1, mBool2);
+    void critical(const char* msg, ...);
+    void critical(const String msg) { critical(msg.c_str()); };
 
-    //char str_temp[6];
-    /* 4 is mininum width, 2 is precision; float value is copied onto str_temp*/
-    //dtostrf(temp, 4, 2, str_temp);
-    //sprintf(temperature,"%s F", str_temp);
+    void error(const char* msg, ...);
+    void error(const String msg) { error(msg.c_str()); };
 
-    // float is not implement on Arduino's vsnprintf function
-    Log.critical("This is float myFloat1=%s, myFloat1=%s", String(myFloat1, 3).c_str(), String(myFloat1, 5).c_str());
-    
-    Log.info("This is char array mCharArray=%s", mCharArray);
-    Log.error("This is bool mBool1=%d mBool1=%s", mBool1, (mBool1 ? "true" : "false"));
-    Log.error("This is bool mBool2=%d mBool2=%s", mBool2, (mBool2 ? "true" : "false"));
-    Log.debug("This is bool mBool1=%d mBool1=%s", mBool1, (mBool1 ? "true" : "false"));
-    Log.verbose("This is bool mBool2=%d mBool2=%s", mBool2, (mBool2 ? "true" : "false"));
-    Log.info("have fun with this Log");
-    Log.warn(mString);
-    Log.error(mString);
-    Log.logln(mString);
-    Log.logln(mString.c_str());
-    Log.error("\n");
-    
-    delay(50000L);
- }
+    void warn(const char* msg, ...);
+    void warn(const String msg) { warn(msg.c_str()); };
+
+    void info(const char* msg, ...);
+    void info(const String msg) { info(msg.c_str()); };
+
+    void debug(const char* msg, ...);
+    void debug(const String msg) { debug(msg.c_str()); };
+
+    void verbose(const char* msg, ...);
+    void verbose(const String msg) { verbose(msg.c_str()); };
+
+    void log(const char* msg, ...);
+    void log(const String msg) { log(msg.c_str()); };
+    void log(const int level, const char* msg, ...);
+    void log(const int level, const String msg) { log(level, msg.c_str()); };
+    void logln(const char* msg, ...);
+    void logln(const String msg) { logln(msg.c_str()); };
+    void logln(const int level, const char* msg, ...);
+    void logln(const int level, const String msg) { logln(level, msg.c_str()); };
