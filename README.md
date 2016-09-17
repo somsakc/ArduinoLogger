@@ -55,3 +55,7 @@ The library comes an example sketches. See file > examples > loggerdemo.inu as d
     void logln(const String msg) { logln(msg.c_str()); };
     void logln(const int level, const char* msg, ...);
     void logln(const int level, const String msg) { logln(level, msg.c_str()); };
+
+# License
+
+This code is released under the GPL License.
